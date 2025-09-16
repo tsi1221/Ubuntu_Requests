@@ -9,8 +9,9 @@ def main():
     # Create directory for fetched images
     os.makedirs("Fetched_Images", exist_ok=True)
 
-    # Prompt user for the image URL
-    image_url = input("Please enter the image URL: ")
+    # Predefined image URL
+    image_url = "https://upload.wikimedia.org/wikipedia/commons/a/ae/Ubuntu-logo.svg"
+    print(f"Fetching image from URL: {image_url}\n")
 
     # Extract filename from URL
     parsed_url = urlparse(image_url)
@@ -18,7 +19,7 @@ def main():
 
     # Generate default filename if URL has no name
     if not filename:
-        filename = "downloaded_image.jpg"
+        filename = "downloaded_image.svg"
 
     # Fetch the image
     try:
